@@ -29,7 +29,8 @@ public class Song {
 
         if (this.artist.equals(comparedSong.artist)
                 && this.name.equals(comparedSong.name)
-                && this.durationInSeconds == comparedSong.durationInSeconds) {
+                && this.durationInSeconds
+                == comparedSong.durationInSeconds) {
             return true;
         }
         return false;

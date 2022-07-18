@@ -17,4 +17,18 @@ public class Book {
         return publicationYear;
     }
 
+    public boolean equals(Object comp) {
+        if (this == comp) {
+            return true;
+        }
+
+        if (!(comp instanceof Book)) {
+            return false;
+        }
+
+        Book compBook = (Book) comp;
+        
+        return (this.name.equals(compBook.name)) && (this.publicationYear == compBook.publicationYear);
+    }
+
 }

@@ -11,6 +11,37 @@ public class SimpleDate {
         this.year = year;
     }
 
+    public void advance() {
+        this.day += 1;
+
+        if (day > 30) {
+            this.month += 1;
+            this.day = 1;
+            if (month > 12) {
+                this.year += 1;
+                this.month = 1;
+            }
+        }
+    }
+
+      public void advance(int howManyDays) {
+        this.day += howManyDays;
+        if (day > 30) {
+            this.month += 1;
+            this.day = this.day - 30;
+            if (month > 12) {
+                this.month = this.month - 12;
+                this.year += 1;
+            }
+        }
+    }
+
+    public SimpleDate afterNumberOfDays(int days) {
+        SimpleDate newDate = new SimpleDate(this.day, this.month, this.year);
+        newDate.advance(days);
+        return newDate;
+    }
+
     @Override
     public String toString() {
         return this.day + "." + this.month + "." + this.year;
@@ -25,8 +56,8 @@ public class SimpleDate {
             return true;
         }
 
-        if (this.year == compared.year && this.month == compared.month &&
-                 this.day < compared.day) {
+        if (this.year == compared.year && this.month == compared.month
+                && this.day < compared.day) {
             return true;
         }
 

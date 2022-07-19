@@ -23,6 +23,45 @@ public class Money {
         return this.cents;
     }
 
+    public Money plus(Money addition) {
+        Money newMoney = new Money(this.euros + addition.euros, this.cents + addition.cents);
+        return newMoney;
+    }
+
+    public boolean lessThan(Money compared) {
+        boolean euroLess = false;
+        if (this.euros < compared.euros) {
+            euroLess = true;
+            return true;
+        }
+        if (this.euros == compared.euros) {
+            if (this.cents < compared.euros) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Money minus(Money decreaser) {
+
+        int euro = this.euros - decreaser.euros;
+        int cents = this.cents - decreaser.cents;
+
+        if (euro >= 0) {
+            if (cents < 0) {
+                euro -= 1;
+                cents += 100;
+            }
+
+        } else {
+            euro = 0;
+            cents = 0;
+        }
+
+        Money newMoney = new Money(euro, cents);
+        return newMoney;
+    }
+
     public String toString() {
         String zero = "";
         if (this.cents < 10) {

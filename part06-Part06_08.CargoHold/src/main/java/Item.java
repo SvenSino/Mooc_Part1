@@ -27,7 +27,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return this.name + "(" + this.getWeight() + " kg)";
+        return this.name + " (" + this.getWeight() + " kg)";
     }
     
     

@@ -33,19 +33,21 @@ public class Suitcase {
         for (Item item : this.items) {
             System.out.println(item.toString());
         }
-        
-        public Item heaviestItem() {
-            Item holder = this.items.get(0);
-            
-            for (Item item : this.items) {
-                if (item.getWeight() > holder.getWeight()) {
-                    holder = item;
-                }
-            }
-            return holder;
-        }
+    }
 
-    
+    public Item heaviestItem() {
+        if (this.items.isEmpty()) {
+            return null;
+        }
+        Item holder = this.items.get(0);
+
+        for (Item item : this.items) {
+            if (item.getWeight() > holder.getWeight()) {
+                holder = item;
+            }
+        }
+        return holder;
+    }
 
     public int totalWeight() {
         int totalWeight = 0;

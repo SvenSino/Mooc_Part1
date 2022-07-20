@@ -17,6 +17,7 @@ public class Suitcase {
     private int currentWeight;
 
     public Suitcase(int weight) {
+        this.items = new ArrayList<>();
         this.maxWeight = weight;
         this.currentWeight = 0;
     }

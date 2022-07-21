@@ -24,6 +24,7 @@ public class Hold {
 
     public void addSuitcase(Suitcase suitcase) {
         if ((this.currentWeight + suitcase.totalWeight()) <= this.maxWeight) {
+            this.currentWeight += suitcase.totalWeight();
             this.suitcases.add(suitcase);
         }
         

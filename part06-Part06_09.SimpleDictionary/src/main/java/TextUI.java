@@ -39,14 +39,13 @@ public class TextUI {
             if (command.equals("search")) {
                 System.out.println("To be translated:");
                 String search = scanner.nextLine();
-                if(this.simpleDic.translate(search) != null) {
-                     System.out.println(this.simpleDic.translate(search));
+                if (this.simpleDic.translate(search) != null) {
+                    System.out.println(this.simpleDic.translate(search));
                 } else {
                     System.out.println("Word " + search + " was not found");
                 }
-               
-            }
-            else {
+
+            } else {
                 System.out.println("Unknown command");
             }
 
